@@ -1,0 +1,33 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Default folder for Go modules
+go.sum
+
+# Dependency directories (remove the comment below if you use Go modules)
+vendor/
+
+# Ignore .env file containing sensitive information
+.env
+
+# Logs and debug files
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Build directories
+bin/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db

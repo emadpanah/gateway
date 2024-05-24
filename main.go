@@ -48,6 +48,8 @@ func main() {
 	mongoDatabase := os.Getenv("MONGO_DATABASE")
 	mongoCollection := os.Getenv("MONGO_COLLECTION")
 
+	appPort := os.Getenv("APP_PORT")
+
 	// Connect to MongoDB
 	clientOpts := options.Client().ApplyURI(mongoURI)
 	client, err := mongo.NewClient(clientOpts)
@@ -124,8 +126,8 @@ func main() {
 		usageData.Unlock()
 	})
 
-	log.Println("Starting server on port 3000")
-	http.ListenAndServe(":3000", r)
+	log.Printf("Starting server on port %s", appPort)
+	http.ListenAndServe(":"+appPort, r)
 }
 
 func proxyRequest(port int, w http.ResponseWriter, r *http.Request) {
